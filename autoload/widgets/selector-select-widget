@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+selector-init
+
+ls $ZDOTDIR/autoload/selector/widgets/ | \
+  sed -e 's/selector-//g' -e 's/-widget//g' | \
+  egrep -v '^select$' | \
+  selector-select +m
+
+if [[ -n `cat /tmp/selector` ]]; then
+  selector-`cat /tmp/selector`-widget
+fi

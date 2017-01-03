@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+selector-init 'git checkout'
+
+git branch --list -v | \
+  grep -v '^\*' | \
+  sed 's/^  *//' | \
+  selector-select +m
+
+cat /tmp/selector | awk '{print $1}' >! /tmp/selector
+
+selector-exec

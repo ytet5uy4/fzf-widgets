@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+selector-init 'sudo netctl-auto switch-to'
+
+netctl-auto list | grep -v '*' | sed 's/ //g' | selector-select +m
+
+selector-exec

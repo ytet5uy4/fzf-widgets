@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+selector-init "$EDITOR"
+
+find -L * -type f -print -o -type l -print -o \
+  \( -path '*/\.*' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \) -prune \
+  2> /dev/null | selector-select -m
+
+selector-exec

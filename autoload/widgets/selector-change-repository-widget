@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+selector-check-command 'ghq'
+
+selector-init 'cd --'
+
+ghq list -p | \
+  sort | \
+  selector-select +m
+
+selector-exec

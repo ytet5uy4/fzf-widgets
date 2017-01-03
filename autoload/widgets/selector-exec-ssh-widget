@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+selector-init 'tmux new-window ssh'
+
+cat <(cat ~/.ssh/config /etc/ssh/ssh_config 2> /dev/null | grep -i '^host' | grep -v '*') \
+  <(grep -v '^\s*\(#\|$\)' /etc/hosts | grep -Fv '0.0.0.0') |
+  awk '{if (length($2) > 0) {print $2}}' | sort -u | selector-select +m
+
+selector-exec

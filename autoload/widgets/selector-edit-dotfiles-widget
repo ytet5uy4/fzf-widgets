@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+selector-init "$EDITOR"
+
+private dir="$XDG_CONFIG_HOME/dotfiles/src"
+
+find $dir/.* -type f -o -type l | \
+  sed "s|$dir/||g" | \
+  selector-select -m
+
+sed -i -e "s|^|$dir/|g" /tmp/selector
+
+selector-exec

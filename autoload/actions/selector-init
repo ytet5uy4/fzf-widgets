@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+if [[ -z $SELECTOR ]]; then
+  if [[ -n $TMUX ]]; then
+    private msg='selector-init: not set \$SELECTOR'
+    tmux split-window "less <<< \"$msg\""
+  fi
+  return 1
+fi
+
+if ! [[ $SELECTOR =~ ^fzf(|-tmux)$ ]]; then
+  if [[ -n $TMUX ]]; then
+    private msg='selector-init: set fzf or fzf-tmux to \$SELECTOR'
+    tmux split-window "less <<< \"$msg\""
+  fi
+  return 1
+fi
+
+if [[ -n $1 ]]; then
+  BUFFER="$1 "
+  CURSOR=$#BUFFER
+  zle -R -c
+fi

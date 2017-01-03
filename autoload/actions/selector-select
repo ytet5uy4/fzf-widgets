@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+cat | $SELECTOR $@ >! /tmp/selector
+
+if [[ $? = 130 ]]; then
+  selector-clear
+  return 1
+elif [[ -z `cat /tmp/selector` ]]; then
+  if [[ -n $TMUX ]]; then
+    private msg="selector-exec: there's no match"
+    tmux split-window "less <<< \"$msg\""
+  fi
+  selector-clear
+  return 1
+fi

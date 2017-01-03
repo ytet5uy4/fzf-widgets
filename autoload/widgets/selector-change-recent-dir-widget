@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+selector-init 'cd --'
+
+cdr -l | \
+  sed 's/^[^ ][^ ]*  *//' | \
+  selector-select +m
+
+selector-exec
