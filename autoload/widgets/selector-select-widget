@@ -2,7 +2,7 @@
 
 selector-init
 
-ls $ZDOTDIR/autoload/selector/widgets/ | \
+ls $FZF_WIDGETS_ROOT/autoload/widgets/ | \
   sed -e 's/selector-//g' -e 's/-widget//g' | \
   egrep -v '^select$' | \
   selector-select +m
