@@ -1,6 +1,12 @@
 #!/bin/zsh
 
-cat | $SELECTOR $@ >! /tmp/selector
+if [[ -z $TMUX ]]; then
+  private selector='fzf'
+elif type tmux fzf-tmux >/dev/null 2>&1; then
+  private selector='fzf-tmux'
+fi
+
+cat | $selector $@ >! /tmp/selector
 
 if [[ $? = 130 ]]; then
   selector-clear

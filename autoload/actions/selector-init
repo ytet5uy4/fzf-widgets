@@ -1,16 +1,8 @@
 #!/bin/zsh
 
-if [[ -z $SELECTOR ]]; then
+if ! type fzf >/dev/null 2>&1; then
   if [[ -n $TMUX ]]; then
-    private msg='selector-init: not set \$SELECTOR'
-    tmux split-window "less <<< \"$msg\""
-  fi
-  return 1
-fi
-
-if ! [[ $SELECTOR =~ ^fzf(|-tmux)$ ]]; then
-  if [[ -n $TMUX ]]; then
-    private msg='selector-init: set fzf or fzf-tmux to \$SELECTOR'
+    private msg='selector-init: command not found: fzf'
     tmux split-window "less <<< \"$msg\""
   fi
   return 1
