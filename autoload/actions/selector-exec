@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-RBUFFER="'`cat /tmp/selector`'"
-CURSOR=$#RBUFFER
-zle -R -c
-zle accept-line
+if [[ -n `cat /tmp/selector` ]]; then
+  RBUFFER="'`cat /tmp/selector`'"
+  CURSOR=$#RBUFFER
+  zle -R -c
+  zle accept-line
+fi
