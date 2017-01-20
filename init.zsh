@@ -1,9 +1,11 @@
 export FZF_WIDGETS_ROOT="$0:a:h"
 
-fpath=($FZF_WIDGETS_ROOT/autoload/**/*(N-/) $fpath)
+: "Autoload functions and Create widgets" && () {
+  private dir="$FZF_WIDGETS_ROOT/autoload"
+  fpath=($dir/**/*(N-/) $fpath)
 
-autoload -Uz `ls -F $FZF_WIDGETS_ROOT/autoload/**/* | grep -v /`
+  autoload -Uz `ls -F $dir/**/* | grep -v /`
 
-for w in `ls -F $FZF_WIDGETS_ROOT/autoload/**/* | grep -v / | grep widget`; do
-  zle -N $w
-done
+  private w
+  for w in `ls $dir/widgets/`; do zle -N $w; done
+}
