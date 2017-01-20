@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-selector-init 'git checkout'
+selector-init 'git checkout --'
 
 git branch --list -v | \
   grep -v '^\*' | \

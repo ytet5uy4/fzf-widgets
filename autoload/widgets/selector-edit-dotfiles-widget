@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-selector-init "$EDITOR"
+selector-init "$EDITOR --"
 
 private dir="$XDG_CONFIG_HOME/dotfiles/src"
 
