@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+selector-init
+
+ls $FZF_WIDGETS_ROOT/autoload/widgets/ | \
+  sed -e 's/fzf-//g' | \
+  egrep -v '^select-widgets$' | \
+  selector-select +m
+
+[[ -n `cat /tmp/selector` ]] && fzf-`cat /tmp/selector`

@@ -8,16 +8,18 @@ This repository manage ZLE widgets of fzf.
 
 # Configuration
 ```zsh
-bindkey '^@'   selector-select-widget
-bindkey '^@c'  selector-change-dir-widget
-bindkey '^\'   selector-change-recent-dir-widget
-bindkey '^@g'  selector-change-repository-widget
-bindkey '^@f'  selector-edit-files-widget
-bindkey '^@.'  selector-edit-dotfiles-widget
-bindkey '^r'   selector-exec-history-widget
-bindkey '^@s'  selector-exec-ssh-widget
-bindkey '^@ga' selector-git-add-widget
-bindkey '^@gb' selector-git-checkout-widget
-bindkey '^@p'  selector-copy-password-widget
-bindkey '^@n'  selector-switch-network-widget
+if zplug check 'ytet5uy4/fzf-widgets'; then
+  bindkey '^@'   fzf-select-widget
+  bindkey '^@c'  fzf-change-dir
+  bindkey '^\'   fzf-change-recent-dir
+  bindkey '^@g'  fzf-change-repository
+  bindkey '^@f'  fzf-edit-files
+  bindkey '^@.'  fzf-edit-dotfiles
+  bindkey '^r'   fzf-exec-history
+  bindkey '^@s'  fzf-exec-ssh
+  bindkey '^@ga' fzf-git-add
+  bindkey '^@gb' fzf-git-checkout
+  bindkey '^@p'  fzf-copy-password
+  bindkey '^@n'  fzf-switch-network
+fi
 ```
