@@ -1,12 +1,18 @@
-# Overview
+# fzf-widgets
+## Overview
 This repository manage ZLE widgets of fzf.
 
-# Installation
+## Installation
+You can use zplug to install fzf-widgets.
+Add following to your `.zshrc`.
+
 ```zsh
-% zplug 'ytet5uy4/fzf-widgets'
+zplug 'ytet5uy4/fzf-widgets'
 ```
 
-# Configuration
+## Configuration
+Add following to your `.zshrc`.
+
 ```zsh
 if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@'   fzf-select-widget
@@ -23,3 +29,9 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@n'  fzf-switch-network
 fi
 ```
+
+## License
+Copyright (c) 2017 ytet5uy4  
+Released under the MIT License, see **[LICENSE.md]**.
+
+[LICENSE.md]: //github.com/ytet5uy4/fzf-widgets/blob/master/LICENSE.md
