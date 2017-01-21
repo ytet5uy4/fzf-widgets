@@ -1,4 +1,10 @@
-# fzf-widgets
+# fzf-widgets - ZLE widgets of fzf
+
+[Overview](#overview) |
+[Installation](#installation) |
+[Configuration](#configuration) |
+[License](#license)
+
 [![license-badge]][license-link]
 [![release-badge]][release-link]
 
