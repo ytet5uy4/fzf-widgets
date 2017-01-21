@@ -1,17 +1,35 @@
 # fzf-widgets
+[![license-badge]][license-link]
+[![release-badge]][release-link]
+
 ## Overview
 This repository manage ZLE widgets of fzf.
 
+currently these widgets are available:
+* select-widget
+* change-dir
+* change-recent-dir
+* change-repository
+* edit-files
+* edit-dotfiles
+* exec-history
+* exec-ssh
+* git-add
+* git-checkout
+* copy-password
+* switch-network
+
 ## Installation
 You can use zplug to install fzf-widgets.
-Add following to your `.zshrc`.
+Add the following to your `.zshrc`:
 
 ```zsh
 zplug 'ytet5uy4/fzf-widgets'
 ```
 
 ## Configuration
-Add following to your `.zshrc`.
+You can map widgets to whatever key you like.
+Add the following to your `.zshrc`:
 
 ```zsh
 if zplug check 'ytet5uy4/fzf-widgets'; then
@@ -30,8 +48,18 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
 fi
 ```
 
+To use `fzf-change-recent-dir`, add the following to your `.zshrc`:
+
+```
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+```
+
 ## License
 Copyright (c) 2017 ytet5uy4  
-Released under the MIT License, see **[LICENSE.md]**.
+Released under the MIT License, see **[LICENSE.md][license-link]**.
 
-[LICENSE.md]: //github.com/ytet5uy4/fzf-widgets/blob/master/LICENSE.md
+[release-link]: https://github.com/ytet5uy4/fzf-widgets/releases/latest
+[release-badge]: https://img.shields.io/github/release/ytet5uy4/fzf-widgets.svg?style=flat-square
+[license-link]: LICENSE.md
+[license-badge]: https://img.shields.io/github/license/ytet5uy4/fzf-widgets.svg?style=flat-square
