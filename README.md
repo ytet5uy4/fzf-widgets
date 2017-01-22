@@ -71,7 +71,8 @@ Copyright (c) 2017 ytet5uy4
 
 Released under the MIT License, see **[LICENSE.md][license-link]**.
 
-[release-link]: https://github.com/ytet5uy4/fzf-widgets/releases/latest
 [release-badge]: https://img.shields.io/github/release/ytet5uy4/fzf-widgets.svg?style=flat-square
-[license-link]: LICENSE.md
 [license-badge]: https://img.shields.io/github/license/ytet5uy4/fzf-widgets.svg?style=flat-square
+
+[release-link]: //github.com/ytet5uy4/fzf-widgets/releases/latest
+[license-link]: LICENSE.md
