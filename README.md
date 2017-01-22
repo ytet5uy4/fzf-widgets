@@ -9,9 +9,11 @@
 [![release-badge]][release-link]
 
 ## Overview
+
 This repository manage ZLE widgets of fzf.
 
 currently these widgets are available:
+
 * select-widget
 * change-dir
 * change-recent-dir
@@ -26,6 +28,7 @@ currently these widgets are available:
 * switch-network
 
 ## Installation
+
 You can use zplug to install fzf-widgets.
 Add the following to your `.zshrc`:
 
@@ -34,6 +37,7 @@ zplug 'ytet5uy4/fzf-widgets'
 ```
 
 ## Configuration
+
 You can map widgets to whatever key you like.
 Add the following to your `.zshrc`:
 
@@ -62,7 +66,9 @@ add-zsh-hook chpwd chpwd_recent_dirs
 ```
 
 ## License
-Copyright (c) 2017 ytet5uy4  
+
+Copyright (c) 2017 ytet5uy4
+
 Released under the MIT License, see **[LICENSE.md][license-link]**.
 
 [release-link]: https://github.com/ytet5uy4/fzf-widgets/releases/latest
