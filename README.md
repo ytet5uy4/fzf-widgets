@@ -12,6 +12,8 @@
 
 This repository manage ZLE widgets of fzf.
 
+![screenshot]
+
 currently these widgets are available:
 
 * select-widget
@@ -71,6 +73,7 @@ Copyright (c) 2017 ytet5uy4
 
 Released under the MIT License, see **[LICENSE.md][license-link]**.
 
+[screenshot]: https://raw.githubusercontent.com/wiki/ytet5uy4/fzf-widgets/screenshot.png
 [release-badge]: https://img.shields.io/github/release/ytet5uy4/fzf-widgets.svg?style=flat-square
 [license-badge]: https://img.shields.io/github/license/ytet5uy4/fzf-widgets.svg?style=flat-square
 
