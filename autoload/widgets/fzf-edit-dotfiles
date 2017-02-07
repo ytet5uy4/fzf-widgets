@@ -2,7 +2,7 @@
 
 selector-init "$EDITOR --"
 
-private dir="$XDG_CONFIG_HOME/dotfiles/src"
+private dir="$DCTL_PATH"
 
 find $dir/.* -type f -o -type l | \
   sed "s|$dir/||g" | \
