@@ -9,6 +9,4 @@ dirs=(
 
 find $dirs -type f -o -type l | selector-select -m
 
-sed -i -e "s|^|$dir/|g" /tmp/selector
-
 selector-exec
