@@ -2,11 +2,12 @@
 
 selector-init "$EDITOR --"
 
-private dir="$DCTL_PATH"
+private -a dirs
+dirs=(
+  `echo "$DOT_DIRS" | sed -e 's/:/\n/g' | sed -e "s|^|$DOT_HOME/|g"`
+)
 
-find $dir/.* -type f -o -type l | \
-  sed "s|$dir/||g" | \
-  selector-select -m
+find $dirs -type f -o -type l | selector-select -m
 
 sed -i -e "s|^|$dir/|g" /tmp/selector
 
