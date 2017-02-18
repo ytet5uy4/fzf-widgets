@@ -9,6 +9,6 @@ ghq list -p | \
   sed "s|$HOME|~|g" | \
   selector-select +m
 
-selector-cat | sed 's|~|$HOME|g' | selector-save
+selector-filter "sed 's|~|$HOME|g'"
 
 selector-insert

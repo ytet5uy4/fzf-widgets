@@ -7,6 +7,6 @@ ls $FZF_WIDGETS_ROOT/autoload/widgets/ | \
   egrep -v '^select-widgets$' | \
   selector-select +m
 
-selector-cat | sed 's/^/fzf-/' | selector-save
+selector-filter "sed 's/^/fzf-/'"
 
 selector-exec
