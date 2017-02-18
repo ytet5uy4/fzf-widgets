@@ -7,6 +7,6 @@ git branch --list -v | \
   sed 's/^  *//' | \
   selector-select +m
 
-cat /tmp/selector | awk '{print $1}' >! /tmp/selector
+selector-cat | awk '{print $1}' | selector-save
 
-selector-exec
+selector-insert

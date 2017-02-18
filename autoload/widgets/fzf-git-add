@@ -9,6 +9,6 @@ git status --porcelain | \
   grep "^.[MD?]" | \
   selector-select -m
 
-cat /tmp/selector | awk '{print $2}' >! /tmp/selector
+selector-cat | awk '{print $2}' | selector-save
 
-selector-exec
+selector-insert

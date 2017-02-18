@@ -9,4 +9,4 @@ dirs=(
 
 find $dirs -type f -o -type l | selector-select -m
 
-selector-exec
+selector-insert

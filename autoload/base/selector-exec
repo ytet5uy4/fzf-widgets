@@ -1,9 +1,4 @@
 #!/bin/zsh
 
-IFS=$'\n' private -a items=(`cat /tmp/selector`)
-if [[ -n $items ]]; then
-  for item in $items; do RBUFFER+="$item:q " done
-  CURSOR=$#RBUFFER
-  zle -R -c
-  zle accept-line
-fi
+IFS=$'\n' private cmd="`cat /tmp/selector`"
+[[ -n $cmd ]] && $=cmd

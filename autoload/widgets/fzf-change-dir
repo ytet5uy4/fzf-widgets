@@ -6,4 +6,4 @@ find . -mindepth 1 -type d -o -type l | \
   sed 's|\./||g' | \
   selector-select +m
 
-selector-exec
+selector-insert

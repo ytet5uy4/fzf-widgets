@@ -6,6 +6,9 @@ selector-init 'cd --'
 
 ghq list -p | \
   sort | \
+  sed "s|$HOME|~|g" | \
   selector-select +m
 
-selector-exec
+selector-cat | sed 's|~|$HOME|g' | selector-save
+
+selector-insert

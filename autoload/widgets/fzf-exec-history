@@ -4,4 +4,4 @@ selector-init
 
 fc -ln 1 | awk '!a[$0]++' | selector-select +m
 
-selector-exec
+selector-insert

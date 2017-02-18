@@ -6,4 +6,6 @@ cdr -l | \
   sed 's/^[^ ][^ ]*  *//' | \
   selector-select +m
 
-selector-exec
+selector-cat | sed 's|~|$HOME|g' | selector-save
+
+selector-insert

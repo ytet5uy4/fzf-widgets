@@ -6,4 +6,4 @@ cat <(cat ~/.ssh/config /etc/ssh/ssh_config 2> /dev/null | grep -i '^host' | gre
   <(grep -v '^\s*\(#\|$\)' /etc/hosts | grep -Fv '0.0.0.0') |
   awk '{if (length($2) > 0) {print $2}}' | sort -u | selector-select +m
 
-selector-exec
+selector-insert
