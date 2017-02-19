@@ -6,12 +6,12 @@ if [[ -n $items ]]; then
   CURSOR=$#RBUFFER
 fi
 
-if [[ -n $1 ]]; then
+if [[ -n $BUFFER ]] && [[ -n $1 ]]; then
   RBUFFER+="$1"
   CURSOR=$#RBUFFER
 fi
 
-if [[ -n $items ]] || [[ -n $1 ]]; then
+if [[ -n $BUFFER ]] && [[ -n $items || -n $1 ]]; then
   zle -R -c
   zle accept-line
 fi
