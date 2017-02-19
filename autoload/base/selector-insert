@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-IFS=$'\n' private -a items=(`cat /tmp/selector`)
+IFS=$'\n' private -a items=(`cat $FZF_WIDGETS_CACHE`)
 if [[ -n $items ]]; then
   for item in $items; do RBUFFER+="$item:q " done
   CURSOR=$#RBUFFER

@@ -1,5 +1,16 @@
 export FZF_WIDGETS_ROOT="$0:a:h"
 
+: "Create cache directory" && () {
+  if [[ -n $XDG_CACHE_HOME ]]; then
+    [[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
+    private dir="$XDG_CACHE_HOME/fzf-widgets"
+  else
+    private dir="/tmp/fzf-widgets"
+  fi
+  [[ ! -d $dir ]] && mkdir $dir
+  export FZF_WIDGETS_CACHE="$dir/data.txt"
+}
+
 : "Autoload functions and Create widgets" && () {
   private dir="$FZF_WIDGETS_ROOT/autoload"
   fpath=($dir/**/*(N-/) $fpath)

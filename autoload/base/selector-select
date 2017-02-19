@@ -6,12 +6,12 @@ elif type tmux fzf-tmux >/dev/null 2>&1; then
   private selector='fzf-tmux'
 fi
 
-cat | $selector $@ >! /tmp/selector
+cat | $selector $@ >! $FZF_WIDGETS_CACHE
 
 if [[ $? = 130 ]]; then
   selector-clear
   return 1
-elif [[ -z `cat /tmp/selector` ]]; then
+elif [[ -z `cat $FZF_WIDGETS_CACHE` ]]; then
   if [[ -n $TMUX ]]; then
     private msg="selector-exec: there's no match"
     tmux split-window "less <<< \"$msg\""
