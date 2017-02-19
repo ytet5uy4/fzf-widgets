@@ -4,6 +4,14 @@ IFS=$'\n' private -a items=(`cat /tmp/selector`)
 if [[ -n $items ]]; then
   for item in $items; do RBUFFER+="$item:q " done
   CURSOR=$#RBUFFER
+fi
+
+if [[ -n $1 ]]; then
+  RBUFFER+="$1"
+  CURSOR=$#RBUFFER
+fi
+
+if [[ -n $items ]] || [[ -n $1 ]]; then
   zle -R -c
   zle accept-line
 fi
