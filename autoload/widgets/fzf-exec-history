@@ -2,6 +2,6 @@
 
 selector-init
 
-fc -ln 1 | awk '!a[$0]++' | selector-select +m
+fc -ln 1 | awk '!a[$0]++' | tac | selector-select +m
 
 selector-insert
