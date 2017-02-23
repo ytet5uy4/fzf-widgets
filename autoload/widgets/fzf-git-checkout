@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  if [[ -n $TMUX ]]; then
+    private msg='fzf-git-checkout: Not a git repository'
+    tmux split-window "less <<< \"$msg\""
+  fi
+  return 1
+fi
+
 selector-init 'git checkout --'
 
 git branch --list -v | \
