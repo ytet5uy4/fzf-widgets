@@ -27,7 +27,6 @@ currently these widgets are available:
 * git-add
 * git-checkout
 * copy-password
-* switch-network
 
 ## Installation
 
@@ -56,7 +55,6 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@ga' fzf-git-add
   bindkey '^@gb' fzf-git-checkout
   bindkey '^@p'  fzf-copy-password
-  bindkey '^@n'  fzf-switch-network
 fi
 ```
 
