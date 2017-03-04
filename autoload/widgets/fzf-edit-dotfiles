@@ -1,12 +1,15 @@
 #!/bin/zsh
 
+if [[ -z $DOT_BASE_DIR ]]; then
+  if [[ -n $TMUX ]]; then
+    private msg='fzf-edit-dotfiles: Not set \$DOT_BASE_DIR'
+    tmux split-window "less <<< \"$msg\""
+  fi
+  return 1
+fi
+
 selector-init "$EDITOR --"
 
-private -a dirs
-dirs=(
-  `echo "$DOT_DIRS" | sed -e 's/:/\n/g' | sed -e "s|^|$DOT_HOME/|g"`
-)
-
-find $dirs -type f -o -type l | selector-select -m
+find $DOT_BASE_DIR -type f -o -type l | selector-select -m
 
 selector-insert
