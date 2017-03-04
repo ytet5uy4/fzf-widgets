@@ -63,6 +63,8 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 ```
 
+To use `change-repository`, install [ghq][ghq-link].
+
 To use `fzf-edit-dotfiles`, add the following to your `.zshenv`:
 
 ```
@@ -81,3 +83,5 @@ Released under the MIT License, see **[LICENSE.md][license-link]**.
 
 [release-link]: //github.com/ytet5uy4/fzf-widgets/releases/latest
 [license-link]: LICENSE.md
+
+[ghq-link]: //github.com/motemen/ghq
