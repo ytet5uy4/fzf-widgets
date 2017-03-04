@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+selector-check-command 'cdr'
+
 selector-init 'cd --'
 
 cdr -l | \
