@@ -1,7 +1,0 @@
-#!/bin/zsh
-
-selector-init
-
-fc -ln 1 | awk '!a[$0]++' | tac | selector-select +m
-
-selector-insert
