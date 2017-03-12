@@ -10,11 +10,8 @@ fi
 
 selector-init 'git add --'
 
-private base_path="`git rev-parse --show-cdup | sed 's%/%\\/%g'`"
-
-git status --porcelain | \
-  sed "s/^\(..\) /\1\t${base_path}/" | \
-  grep "^.[MD?]" | \
+git status --short | \
+  grep '^.[MD?]' | \
   selector-select -m
 
 selector-filter "awk '{print \$2}'"
