@@ -2,6 +2,7 @@
 
 [Overview](#overview) |
 [Installation](#installation) |
+[Requirements](#requirements) |
 [Configuration](#configuration) |
 [License](#license)
 
@@ -35,6 +36,10 @@ Add the following to your `.zshrc`:
 ```zsh
 zplug 'ytet5uy4/fzf-widgets'
 ```
+
+## Requirements
+
+`zsh`: version 5.2 or higher
 
 ## Configuration
 
