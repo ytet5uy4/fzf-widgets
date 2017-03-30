@@ -2,7 +2,7 @@
 
 if [[ -z $DOT_BASE_DIR ]]; then
   if [[ -n $TMUX ]]; then
-    private msg='fzf-edit-dotfiles: Not set \$DOT_BASE_DIR'
+    local msg='fzf-edit-dotfiles: Not set \$DOT_BASE_DIR'
     tmux split-window "less <<< \"$msg\""
   fi
   return 1

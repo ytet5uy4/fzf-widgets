@@ -2,7 +2,7 @@
 
 if ! type fzf >/dev/null 2>&1; then
   if [[ -n $TMUX ]]; then
-    private msg='selector-init: command not found: fzf'
+    local msg='selector-init: command not found: fzf'
     tmux split-window "less <<< \"$msg\""
   fi
   return 1

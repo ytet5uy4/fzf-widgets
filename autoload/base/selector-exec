@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-IFS=$'\n' private cmd="`cat $FZF_WIDGETS_CACHE`"
+IFS=$'\n' local cmd="`cat $FZF_WIDGETS_CACHE`"
 [[ -n $cmd ]] && $=cmd
