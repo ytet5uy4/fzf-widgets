@@ -38,7 +38,7 @@ zplug 'ytet5uy4/fzf-widgets'
 
 ## Requirements
 
-`zsh`: version 5.2 or higher
+`zsh`: version 5.0.2 or higher
 
 ## Configuration
 
