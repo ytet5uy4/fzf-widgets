@@ -8,7 +8,7 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   return 1
 fi
 
-selector-init 'git checkout --'
+selector-init 'git checkout'
 
 git branch --list -v | \
   grep -v '^\*' | \
