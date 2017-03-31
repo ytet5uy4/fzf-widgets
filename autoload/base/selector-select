@@ -1,9 +1,9 @@
 #!/bin/zsh
 
 if [[ -z $TMUX ]]; then
-  private selector='fzf'
+  local selector='fzf'
 elif type tmux fzf-tmux >/dev/null 2>&1; then
-  private selector='fzf-tmux'
+  local selector='fzf-tmux'
 fi
 
 cat | $selector $@ >! $FZF_WIDGETS_CACHE
@@ -13,7 +13,7 @@ if [[ $? = 130 ]]; then
   return 1
 elif [[ -z `cat $FZF_WIDGETS_CACHE` ]]; then
   if [[ -n $TMUX ]]; then
-    private msg="selector-exec: there's no match"
+    local msg="selector-exec: there's no match"
     tmux split-window "less <<< \"$msg\""
   fi
   selector-clear
