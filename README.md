@@ -27,6 +27,7 @@ currently these widgets are available:
 * fzf-exec-ssh
 * fzf-git-add-files
 * fzf-git-checkout-branch
+* fzf-git-delete-branches
 
 ## Installation
 
@@ -57,7 +58,8 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^r'   fzf-insert-history
   bindkey '^@s'  fzf-exec-ssh
   bindkey '^@ga' fzf-git-add-files
-  bindkey '^@gb' fzf-git-checkout-branch
+  bindkey '^@gc' fzf-git-checkout-branch
+  bindkey '^@gd' fzf-git-delete-branches
 fi
 ```
 
