@@ -4,6 +4,6 @@ selector-init 'cd --'
 
 find . -mindepth 1 -type d -o -type l | \
   sed 's|\./||g' | \
-  selector-select +m
+  selector-select $FZF_WIDGETS_OPTS[change-dir] +m
 
 selector-insert

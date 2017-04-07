@@ -31,8 +31,7 @@ currently these widgets are available:
 
 ## Installation
 
-You can use zplug to install fzf-widgets.
-Add the following to your `.zshrc`:
+You can use zplug to install fzf-widgets. Add the following to your `.zshrc`:
 
 ```zsh
 zplug 'ytet5uy4/fzf-widgets'
@@ -44,11 +43,12 @@ zplug 'ytet5uy4/fzf-widgets'
 
 ## Configuration
 
-You can map widgets to whatever key you like.
-Add the following to your `.zshrc`:
+You can map widgets to whatever key you like and specify options of `fzf` to
+each widgets with `$FZF_WIDGETS_OPTS`. Add the following to your `.zshrc`:
 
 ```zsh
 if zplug check 'ytet5uy4/fzf-widgets'; then
+  # Map widgets to key
   bindkey '^@'   fzf-select-widget
   bindkey '^@c'  fzf-change-dir
   bindkey '^\'   fzf-change-recent-dir
@@ -60,6 +60,9 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@ga' fzf-git-add-files
   bindkey '^@gc' fzf-git-checkout-branch
   bindkey '^@gd' fzf-git-delete-branches
+
+  # Enable Exact-match by fzf-insert-history
+  FZF_WIDGETS_OPTS[insert-history]='--exact'
 fi
 ```
 

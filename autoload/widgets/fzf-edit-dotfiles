@@ -10,6 +10,7 @@ fi
 
 selector-init "$EDITOR --"
 
-find $DOT_BASE_DIR -type f -o -type l | selector-select -m
+find $DOT_BASE_DIR -type f -o -type l | \
+  selector-select $FZF_WIDGETS_OPTS[edit-dotfiles] -m
 
 selector-insert
