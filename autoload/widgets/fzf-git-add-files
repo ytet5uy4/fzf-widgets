@@ -12,7 +12,7 @@ selector-init 'git add --'
 
 git status --short | \
   grep '^.[MD?]' | \
-  selector-select -m
+  selector-select $FZF_WIDGETS_OPTS[git-add-files] -m
 
 selector-filter "awk '{print \$2}'"
 
