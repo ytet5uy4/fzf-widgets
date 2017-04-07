@@ -23,6 +23,7 @@ currently these widgets are available:
 * change-repository
 * edit-files
 * edit-dotfiles
+* insert-history
 * exec-ssh
 * git-add
 * git-checkout
@@ -53,6 +54,7 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@g'  fzf-change-repository
   bindkey '^@f'  fzf-edit-files
   bindkey '^@.'  fzf-edit-dotfiles
+  bindkey '^r'   fzf-insert-history
   bindkey '^@s'  fzf-exec-ssh
   bindkey '^@ga' fzf-git-add
   bindkey '^@gb' fzf-git-checkout

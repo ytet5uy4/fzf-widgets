@@ -1,4 +1,5 @@
 export FZF_WIDGETS_ROOT="$0:a:h"
+typeset -gA FZF_WIDGETS_OPTS
 
 : "Create cache directory" && () {
   if [[ -n $XDG_CACHE_HOME ]]; then
