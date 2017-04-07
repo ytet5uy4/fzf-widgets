@@ -17,16 +17,16 @@ This repository manage ZLE widgets of fzf.
 
 currently these widgets are available:
 
-* select-widget
-* change-dir
-* change-recent-dir
-* change-repository
-* edit-files
-* edit-dotfiles
-* insert-history
-* exec-ssh
-* git-add
-* git-checkout
+* fzf-select-widget
+* fzf-change-dir
+* fzf-change-recent-dir
+* fzf-change-repository
+* fzf-edit-files
+* fzf-edit-dotfiles
+* fzf-insert-history
+* fzf-exec-ssh
+* fzf-git-add-files
+* fzf-git-checkout-branch
 
 ## Installation
 
@@ -56,8 +56,8 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@.'  fzf-edit-dotfiles
   bindkey '^r'   fzf-insert-history
   bindkey '^@s'  fzf-exec-ssh
-  bindkey '^@ga' fzf-git-add
-  bindkey '^@gb' fzf-git-checkout
+  bindkey '^@ga' fzf-git-add-files
+  bindkey '^@gb' fzf-git-checkout-branch
 fi
 ```
 
