@@ -6,9 +6,9 @@ typeset -gA FZF_WIDGETS_OPTS
     [[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
     local dir="$XDG_CACHE_HOME/fzf-widgets"
   else
-    local dir="/tmp/fzf-widgets"
+    local dir="/tmp/fzf-widgets-$USER"
   fi
-  [[ ! -d $dir ]] && mkdir $dir
+  [[ ! -d $dir ]] && mkdir $dir && chmod 700 $dir
   export FZF_WIDGETS_CACHE="$dir/data.txt"
 }
 
