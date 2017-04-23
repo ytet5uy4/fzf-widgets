@@ -17,17 +17,18 @@ This repository manage ZLE widgets of fzf.
 
 currently these widgets are available:
 
-* fzf-select-widget
 * fzf-change-dir
 * fzf-change-recent-dir
 * fzf-change-repository
-* fzf-edit-files
 * fzf-edit-dotfiles
-* fzf-insert-history
+* fzf-edit-files
 * fzf-exec-ssh
 * fzf-git-add-files
 * fzf-git-checkout-branch
 * fzf-git-delete-branches
+* fzf-insert-history
+* fzf-kill-processes
+* fzf-select-widget
 
 ## Installation
 
@@ -50,16 +51,17 @@ each widgets with `$FZF_WIDGETS_OPTS`. Add the following to your `.zshrc`:
 if zplug check 'ytet5uy4/fzf-widgets'; then
   # Map widgets to key
   bindkey '^@'   fzf-select-widget
-  bindkey '^@c'  fzf-change-dir
-  bindkey '^\'   fzf-change-recent-dir
-  bindkey '^@g'  fzf-change-repository
-  bindkey '^@f'  fzf-edit-files
   bindkey '^@.'  fzf-edit-dotfiles
-  bindkey '^r'   fzf-insert-history
-  bindkey '^@s'  fzf-exec-ssh
+  bindkey '^@c'  fzf-change-dir
+  bindkey '^@f'  fzf-edit-files
+  bindkey '^@g'  fzf-change-repository
   bindkey '^@ga' fzf-git-add-files
   bindkey '^@gc' fzf-git-checkout-branch
   bindkey '^@gd' fzf-git-delete-branches
+  bindkey '^@k'  fzf-kill-processes
+  bindkey '^@s'  fzf-exec-ssh
+  bindkey '^\'   fzf-change-recent-dir
+  bindkey '^r'   fzf-insert-history
 
   # Enable Exact-match by fzf-insert-history
   FZF_WIDGETS_OPTS[insert-history]='--exact'
