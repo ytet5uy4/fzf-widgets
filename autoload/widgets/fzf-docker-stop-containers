@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+selector-init 'docker container stop'
+
+docker container ls | \
+  sed 1d | \
+  selector-select $FZF_WIDGETS_OPTS[docker-stop-containers] -m
+
+selector-filter "awk '{print \$1}'"
+
+selector-insert
