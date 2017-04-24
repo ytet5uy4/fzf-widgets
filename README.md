@@ -17,9 +17,8 @@ This repository manage ZLE widgets of fzf.
 
 currently these widgets are available:
 
-* fzf-change-dir
-* fzf-change-recent-dir
-* fzf-change-repository
+* fzf-change-directory
+* fzf-change-recent-directory
 * fzf-docker-kill-containers
 * fzf-docker-logs-container
 * fzf-docker-remove-containers
@@ -31,6 +30,7 @@ currently these widgets are available:
 * fzf-edit-files
 * fzf-exec-ssh
 * fzf-git-add-files
+* fzf-git-change-repository
 * fzf-git-checkout-branch
 * fzf-git-delete-branches
 * fzf-insert-history
@@ -60,15 +60,15 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   # Map widgets to key
   bindkey '^@'    fzf-select-widget
   bindkey '^@.'   fzf-edit-dotfiles
-  bindkey '^@c'   fzf-change-dir
+  bindkey '^@c'   fzf-change-directory
   bindkey '^@f'   fzf-edit-files
   bindkey '^@k'   fzf-kill-processes
   bindkey '^@s'   fzf-exec-ssh
-  bindkey '^\'    fzf-change-recent-dir
+  bindkey '^\'    fzf-change-recent-directory
   bindkey '^r'    fzf-insert-history
 
   ## Git
-  bindkey '^@g'   fzf-change-repository
+  bindkey '^@g'   fzf-git-change-repository
   bindkey '^@ga'  fzf-git-add-files
   bindkey '^@gc'  fzf-git-checkout-branch
   bindkey '^@gd'  fzf-git-delete-branches
@@ -88,14 +88,14 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
 fi
 ```
 
-To use `fzf-change-recent-dir`, add the following to your `.zshrc`:
+To use `fzf-change-recent-directory`, add the following to your `.zshrc`:
 
 ```
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 ```
 
-To use `change-repository`, install [ghq][ghq-link].
+To use `fzf-git-change-repository`, install [ghq][ghq-link].
 
 To use `fzf-edit-dotfiles`, add the following to your `.zshenv`:
 
