@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+selector-init 'docker container start'
+
+docker container ls -a | \
+  sed 1d | \
+  selector-select $FZF_WIDGETS_OPTS[docker-start-containers] -m
+
+selector-filter "awk '{print \$1}'"
+
+selector-insert

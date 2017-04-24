@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+selector-init
+
+ls $FZF_WIDGETS_ROOT/autoload/widgets/ | \
+  sed -e 's/fzf-//g' | \
+  grep '^docker-.*$' | \
+  egrep -v '^select-widget$' | \
+  selector-select $FZF_WIDGETS_OPTS[select-docker-widget] +m
+
+selector-filter "sed 's/^/fzf-/'"
+
+selector-exec
