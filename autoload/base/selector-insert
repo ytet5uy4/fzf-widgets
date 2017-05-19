@@ -13,6 +13,6 @@ if [[ -n $BUFFER ]] && [[ -n $1 ]]; then
 fi
 
 if [[ -n $BUFFER ]] && [[ -n $items || -n $1 ]]; then
-  zle -R -c
+  zle reset-prompt
   zle accept-line
 fi

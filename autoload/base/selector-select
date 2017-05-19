@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-if [[ -z $TMUX ]]; then
-  local selector='fzf'
-elif type tmux fzf-tmux >/dev/null 2>&1; then
-  local selector='fzf-tmux'
+local selector='fzf'
+
+if type tmux fzf-tmux >/dev/null 2>&1 && [[ ${FZF_TMUX:-0} != 0 ]]; then
+  selector='fzf-tmux'
 fi
 
 cat | $selector $@ >! $FZF_WIDGETS_CACHE

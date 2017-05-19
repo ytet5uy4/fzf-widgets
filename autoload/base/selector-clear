@@ -2,4 +2,4 @@
 
 BUFFER=""
 CURSOR=$#BUFFER
-zle -R -c
+zle reset-prompt
