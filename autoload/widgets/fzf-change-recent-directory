@@ -8,6 +8,4 @@ cdr -l | \
   sed 's/^[^ ][^ ]*  *//' | \
   selector-select $FZF_WIDGETS_OPTS[change-recent-dir] +m
 
-selector-filter "sed 's|~|$HOME|g'"
-
 selector-insert

@@ -9,6 +9,4 @@ ghq list -p | \
   sed "s|$HOME|~|g" | \
   selector-select $FZF_WIDGETS_OPTS[change-repository] +m
 
-selector-filter "sed 's|~|$HOME|g'"
-
 selector-insert

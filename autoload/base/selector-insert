@@ -3,7 +3,7 @@
 local -a items
 IFS=$'\n' items=(`cat $FZF_WIDGETS_CACHE`)
 if [[ -n $items ]]; then
-  for item in $items; do RBUFFER+="$item:q " done
+  for item in $items; do RBUFFER+="$item:q:gs/\\~/~/ " done
   CURSOR=$#RBUFFER
 fi
 
