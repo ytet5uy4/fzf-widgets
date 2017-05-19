@@ -11,5 +11,5 @@ fi
 if [[ -n $1 ]]; then
   BUFFER="$1 "
   CURSOR=$#BUFFER
-  zle -R -c
+  zle reset-prompt
 fi
