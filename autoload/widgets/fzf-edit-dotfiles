@@ -10,7 +10,8 @@ fi
 
 selector-init "$EDITOR --"
 
-find $DOT_BASE_DIR -type f -o -type l | \
+git -C $DOT_BASE_DIR ls-files | \
+  sed "s|^|~/|g" | \
   selector-select $FZF_WIDGETS_OPTS[edit-dotfiles] -m
 
 selector-insert
