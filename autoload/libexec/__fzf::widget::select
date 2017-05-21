@@ -2,7 +2,7 @@
 
 local selector='fzf'
 
-if type tmux fzf-tmux >/dev/null 2>&1 && [[ ${FZF_TMUX:-0} != 0 ]]; then
+if type tmux fzf-tmux >/dev/null 2>&1 && [[ $FZF_TMUX != 0 ]]; then
   selector='fzf-tmux'
 fi
 

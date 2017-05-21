@@ -1,4 +1,5 @@
 export FZF_WIDGETS_ROOT="$0:a:h"
+export FZF_TMUX=0
 typeset -gA FZF_WIDGETS_OPTS
 
 : "Create cache directory" && () {
