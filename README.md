@@ -15,6 +15,12 @@ This repository manage ZLE widgets of fzf.
 
 ![screenshot]
 
+### Pros
+
+* Can map widgets to whatever key you like
+* Support for [zsh-autosuggestions][zsh-autosuggetions-link]
+* Support for [Antigen][antigen-link] ([junegunn/fzf#86][fzf-issue-86-link])
+
 ## Installation
 
 You can use zplug to install fzf-widgets. Add the following to your `.zshrc`:
@@ -35,20 +41,20 @@ each widgets with `$FZF_WIDGETS_OPTS`. Add the following to your `.zshrc`:
 ```zsh
 if zplug check 'ytet5uy4/fzf-widgets'; then
   # Map widgets to key
-  bindkey '^@'    fzf-select-widget
-  bindkey '^@.'   fzf-edit-dotfiles
-  bindkey '^@c'   fzf-change-directory
-  bindkey '^@f'   fzf-edit-files
-  bindkey '^@k'   fzf-kill-processes
-  bindkey '^@s'   fzf-exec-ssh
-  bindkey '^\'    fzf-change-recent-directory
-  bindkey '^r'    fzf-insert-history
+  bindkey '^@'  fzf-select-widget
+  bindkey '^@.' fzf-edit-dotfiles
+  bindkey '^@c' fzf-change-directory
+  bindkey '^@f' fzf-edit-files
+  bindkey '^@k' fzf-kill-processes
+  bindkey '^@s' fzf-exec-ssh
+  bindkey '^\'  fzf-change-recent-directory
+  bindkey '^r'  fzf-insert-history
 
   ## Git
-  bindkey '^@g'   fzf-git-change-repository
-  bindkey '^@ga'  fzf-git-add-files
-  bindkey '^@gc'  fzf-git-checkout-branch
-  bindkey '^@gd'  fzf-git-delete-branches
+  bindkey '^@g'  fzf-git-change-repository
+  bindkey '^@ga' fzf-git-add-files
+  bindkey '^@gc' fzf-git-checkout-branch
+  bindkey '^@gd' fzf-git-delete-branches
 
   ## Docker
   bindkey '^@d'   fzf-select-docker-widget
@@ -62,6 +68,9 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
 
   # Enable Exact-match by fzf-insert-history
   FZF_WIDGETS_OPTS[insert-history]='--exact'
+
+  # Start fzf in a tmux pane
+  FZF_TMUX=1
 fi
 ```
 
@@ -92,5 +101,9 @@ Released under the MIT License, see **[LICENSE.md][license-link]**.
 
 [release-link]: //github.com/ytet5uy4/fzf-widgets/releases/latest
 [license-link]: LICENSE.md
+
+[zsh-autosuggetions-link]: //github.com/zsh-users/zsh-autosuggestions
+[antigen-link]: //github.com/zsh-users/antigen
+[fzf-issue-86-link]: //github.com/junegunn/fzf/issues/86
 
 [ghq-link]: //github.com/motemen/ghq
