@@ -4,7 +4,7 @@ __fzf::widget::init 'docker volume rm'
 
 docker volume ls | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[docker-remove-volumes] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-volumes] -m
 
 __fzf::widget::filter "awk '{print \$2}'"
 

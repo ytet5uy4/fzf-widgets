@@ -13,7 +13,7 @@ __fzf::widget::init 'git checkout'
 git branch --list -v | \
   grep -v '^\*' | \
   sed 's/^  *//' | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[git-checkout-branch] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[git-checkout-branch] +m
 
 __fzf::widget::filter "awk '{print \$1}'"
 

@@ -36,7 +36,7 @@ zplug 'ytet5uy4/fzf-widgets'
 ## Configuration
 
 You can map widgets to whatever key you like and specify options of `fzf` to
-each widgets with `$FZF_WIDGETS_OPTS`. Add the following to your `.zshrc`:
+each widgets with `$FZF_WIDGET_OPTS`. Add the following to your `.zshrc`:
 
 ```zsh
 if zplug check 'ytet5uy4/fzf-widgets'; then
@@ -67,10 +67,10 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@dso' fzf-docker-stop-containers
 
   # Enable Exact-match by fzf-insert-history
-  FZF_WIDGETS_OPTS[insert-history]='--exact'
+  FZF_WIDGET_OPTS[insert-history]='--exact'
 
   # Start fzf in a tmux pane
-  FZF_TMUX=1
+  FZF_WIDGET_TMUX=1
 fi
 ```
 

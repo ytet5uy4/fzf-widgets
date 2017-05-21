@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 local -a items
-IFS=$'\n' items=(`cat $FZF_WIDGETS_CACHE`)
+IFS=$'\n' items=(`cat $FZF_WIDGET_CACHE`)
 if [[ -n $items ]]; then
   for item in $items; do RBUFFER+="$item:q:gs/\\~/~/ " done
   CURSOR=$#RBUFFER

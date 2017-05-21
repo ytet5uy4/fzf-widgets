@@ -1,6 +1,6 @@
-export FZF_WIDGETS_ROOT="$0:a:h"
-export FZF_TMUX=0
-typeset -gA FZF_WIDGETS_OPTS
+export FZF_WIDGET_ROOT="$0:a:h"
+export FZF_WIDGET_TMUX=0
+typeset -gA FZF_WIDGET_OPTS
 
 : "Create cache directory" && () {
   if [[ -n $XDG_CACHE_HOME ]]; then
@@ -10,11 +10,11 @@ typeset -gA FZF_WIDGETS_OPTS
     local dir="/tmp/fzf-widgets-$USER"
   fi
   [[ ! -d $dir ]] && mkdir $dir && chmod 700 $dir
-  export FZF_WIDGETS_CACHE="$dir/data.txt"
+  export FZF_WIDGET_CACHE="$dir/data.txt"
 }
 
 : "Autoload functions and Create widgets" && () {
-  local dir="$FZF_WIDGETS_ROOT/autoload"
+  local dir="$FZF_WIDGET_ROOT/autoload"
   fpath=($dir/**/*(N-/) $fpath)
 
   autoload -Uz `ls -F $dir/**/* | grep -v /`
@@ -27,6 +27,6 @@ typeset -gA FZF_WIDGETS_OPTS
 if [[ -n ZSH_AUTOSUGGEST_IGNORE_WIDGETS ]]; then
   ZSH_AUTOSUGGEST_IGNORE_WIDGETS=(
     $ZSH_AUTOSUGGEST_IGNORE_WIDGETS
-    `ls $FZF_WIDGETS_ROOT/autoload/widgets/`
+    `ls $FZF_WIDGET_ROOT/autoload/widgets/`
   )
 fi

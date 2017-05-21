@@ -2,16 +2,16 @@
 
 local selector='fzf'
 
-if type tmux fzf-tmux >/dev/null 2>&1 && [[ $FZF_TMUX != 0 ]]; then
+if type tmux fzf-tmux >/dev/null 2>&1 && [[ $FZF_WIDGET_TMUX != 0 ]]; then
   selector='fzf-tmux'
 fi
 
-cat | $selector $@ >! $FZF_WIDGETS_CACHE
+cat | $selector $@ >! $FZF_WIDGET_CACHE
 
 if [[ $? = 130 ]]; then
   __fzf::widget::clear
   return 1
-elif [[ -z `cat $FZF_WIDGETS_CACHE` ]]; then
+elif [[ -z `cat $FZF_WIDGET_CACHE` ]]; then
   if [[ -n $TMUX ]]; then
     local msg="$0: there's no match"
     tmux split-window "less <<< \"$msg\""

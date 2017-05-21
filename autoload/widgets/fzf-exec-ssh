@@ -7,6 +7,6 @@ cat ~/.ssh/config /etc/ssh/ssh_config 2>/dev/null | \
   grep -v '*' | \
   awk '{if (length($2) > 0) {print $2}}' | \
   sort -u | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[exec-ssh] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[exec-ssh] +m
 
 __fzf::widget::insert

@@ -2,10 +2,10 @@
 
 __fzf::widget::init
 
-ls $FZF_WIDGETS_ROOT/autoload/widgets/ | \
+ls $FZF_WIDGET_ROOT/autoload/widgets/ | \
   sed -e 's/fzf-//g' | \
   egrep -v '^select-widget$' | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[select-widget] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[select-widget] +m
 
 __fzf::widget::filter "sed 's/^/fzf-/'"
 

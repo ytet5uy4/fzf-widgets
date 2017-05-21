@@ -4,7 +4,7 @@ __fzf::widget::init 'docker container stop'
 
 docker container ls | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[docker-stop-containers] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-stop-containers] -m
 
 __fzf::widget::filter "awk '{print \$1}'"
 

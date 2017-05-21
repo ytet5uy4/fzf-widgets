@@ -6,6 +6,6 @@ __fzf::widget::init 'cd --'
 
 cdr -l | \
   sed 's/^[^ ][^ ]*  *//' | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[change-recent-dir] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[change-recent-dir] +m
 
 __fzf::widget::insert

@@ -12,6 +12,6 @@ __fzf::widget::init "$EDITOR --"
 
 git -C $DOT_BASE_DIR ls-files | \
   sed "s|^|~/|g" | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[edit-dotfiles] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[edit-dotfiles] -m
 
 __fzf::widget::insert

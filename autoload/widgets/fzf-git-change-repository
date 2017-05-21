@@ -7,6 +7,6 @@ __fzf::widget::init 'cd --'
 ghq list -p | \
   sort | \
   sed "s|$HOME|~|g" | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[change-repository] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[change-repository] +m
 
 __fzf::widget::insert

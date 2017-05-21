@@ -4,6 +4,6 @@ __fzf::widget::init 'cd --'
 
 find . -mindepth 1 -type d -o -type l | \
   sed 's|\./||g' | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[change-dir] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[change-dir] +m
 
 __fzf::widget::insert

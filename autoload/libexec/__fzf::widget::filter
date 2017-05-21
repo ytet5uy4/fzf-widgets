@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-zsh -c "cat $FZF_WIDGETS_CACHE | $1 | tee $FZF_WIDGETS_CACHE" >/dev/null 2>&1
+zsh -c "cat $FZF_WIDGET_CACHE | $1 | tee $FZF_WIDGET_CACHE" >/dev/null 2>&1

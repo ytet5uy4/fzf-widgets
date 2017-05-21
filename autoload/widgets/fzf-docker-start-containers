@@ -4,7 +4,7 @@ __fzf::widget::init 'docker container start'
 
 docker container ls -a | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGETS_OPTS[docker-start-containers] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-start-containers] -m
 
 __fzf::widget::filter "awk '{print \$1}'"
 

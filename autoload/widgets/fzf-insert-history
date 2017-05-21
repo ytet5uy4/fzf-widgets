@@ -2,9 +2,9 @@
 
 __fzf::widget::init
 
-fc -l 1 | __fzf::widget::select --tac --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_WIDGETS_OPTS[insert-history] --query="$LBUFFER" +m
+fc -l 1 | __fzf::widget::select --tac --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_WIDGET_OPTS[insert-history] --query="$LBUFFER" +m
 
-items=(`cat $FZF_WIDGETS_CACHE`)
+items=(`cat $FZF_WIDGET_CACHE`)
 if [[ -n $items ]]; then
   num=$items[1]
   if [ -n "$num" ]; then
