@@ -2,8 +2,10 @@
 
 selector-init "$EDITOR --"
 
-find -L * -type f -print -o -type l -print -o \
+find -L . -type f -print -o -type l -print -o \
   \( -path '*/\.*' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \) -prune \
-  2> /dev/null | selector-select $FZF_WIDGETS_OPTS[edit-files] -m
+  2> /dev/null | \
+  sed 's|\./||g' | \
+  selector-select $FZF_WIDGETS_OPTS[edit-files] -m
 
 selector-insert
