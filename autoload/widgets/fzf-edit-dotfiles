@@ -8,10 +8,10 @@ if [[ -z $DOT_BASE_DIR ]]; then
   return 1
 fi
 
-selector-init "$EDITOR --"
+__fzf::widget::init "$EDITOR --"
 
 git -C $DOT_BASE_DIR ls-files | \
   sed "s|^|~/|g" | \
-  selector-select $FZF_WIDGETS_OPTS[edit-dotfiles] -m
+  __fzf::widget::select $FZF_WIDGETS_OPTS[edit-dotfiles] -m
 
-selector-insert
+__fzf::widget::insert

@@ -9,13 +9,13 @@ fi
 cat | $selector $@ >! $FZF_WIDGETS_CACHE
 
 if [[ $? = 130 ]]; then
-  selector-clear
+  __fzf::widget::clear
   return 1
 elif [[ -z `cat $FZF_WIDGETS_CACHE` ]]; then
   if [[ -n $TMUX ]]; then
-    local msg="selector-exec: there's no match"
+    local msg="$0: there's no match"
     tmux split-window "less <<< \"$msg\""
   fi
-  selector-clear
+  __fzf::widget::clear
   return 1
 fi

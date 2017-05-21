@@ -8,13 +8,13 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   return 1
 fi
 
-selector-init 'git checkout'
+__fzf::widget::init 'git checkout'
 
 git branch --list -v | \
   grep -v '^\*' | \
   sed 's/^  *//' | \
-  selector-select $FZF_WIDGETS_OPTS[git-checkout-branch] +m
+  __fzf::widget::select $FZF_WIDGETS_OPTS[git-checkout-branch] +m
 
-selector-filter "awk '{print \$1}'"
+__fzf::widget::filter "awk '{print \$1}'"
 
-selector-insert
+__fzf::widget::insert

@@ -1,12 +1,12 @@
 #!/bin/zsh
 
-selector-check-command 'ghq'
+__fzf::widget::check 'ghq' || return 1
 
-selector-init 'cd --'
+__fzf::widget::init 'cd --'
 
 ghq list -p | \
   sort | \
   sed "s|$HOME|~|g" | \
-  selector-select $FZF_WIDGETS_OPTS[change-repository] +m
+  __fzf::widget::select $FZF_WIDGETS_OPTS[change-repository] +m
 
-selector-insert
+__fzf::widget::insert

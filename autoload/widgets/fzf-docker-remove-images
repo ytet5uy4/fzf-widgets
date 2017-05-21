@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-selector-init 'docker image rm'
+__fzf::widget::init 'docker image rm'
 
 docker image ls | \
   sed 1d | \
-  selector-select $FZF_WIDGETS_OPTS[docker-remove-images] -m
+  __fzf::widget::select $FZF_WIDGETS_OPTS[docker-remove-images] -m
 
-selector-filter "awk '{print \$3}'"
+__fzf::widget::filter "awk '{print \$3}'"
 
-selector-insert
+__fzf::widget::insert

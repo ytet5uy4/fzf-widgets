@@ -2,7 +2,7 @@
 
 if ! type $1 >/dev/null 2>&1; then
   if [[ -n $TMUX ]]; then
-    local msg="selector-check-command: command not found: $1"
+    local msg="$0: command not found: $1"
     tmux split-window "less <<< \"$msg\""
   fi
   return 1

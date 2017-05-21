@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-selector-check-command 'cdr'
+__fzf::widget::check 'cdr' || return 1
 
-selector-init 'cd --'
+__fzf::widget::init 'cd --'
 
 cdr -l | \
   sed 's/^[^ ][^ ]*  *//' | \
-  selector-select $FZF_WIDGETS_OPTS[change-recent-dir] +m
+  __fzf::widget::select $FZF_WIDGETS_OPTS[change-recent-dir] +m
 
-selector-insert
+__fzf::widget::insert
