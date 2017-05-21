@@ -15,29 +15,6 @@ This repository manage ZLE widgets of fzf.
 
 ![screenshot]
 
-currently these widgets are available:
-
-* fzf-change-directory
-* fzf-change-recent-directory
-* fzf-docker-kill-containers
-* fzf-docker-logs-container
-* fzf-docker-remove-containers
-* fzf-docker-remove-images
-* fzf-docker-remove-volumes
-* fzf-docker-start-containers
-* fzf-docker-stop-containers
-* fzf-edit-dotfiles
-* fzf-edit-files
-* fzf-exec-ssh
-* fzf-git-add-files
-* fzf-git-change-repository
-* fzf-git-checkout-branch
-* fzf-git-delete-branches
-* fzf-insert-history
-* fzf-kill-processes
-* fzf-select-docker-widget
-* fzf-select-widget
-
 ## Installation
 
 You can use zplug to install fzf-widgets. Add the following to your `.zshrc`:
