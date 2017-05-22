@@ -1,11 +1,12 @@
 #!/bin/zsh
 
-__fzf::widget::init "$EDITOR --"
+__fzf::widget::init "$EDITOR --" || return 1
 
 find -L . -type f -print -o -type l -print -o \
   \( -path '*/\.*' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \) -prune \
   2> /dev/null | \
   sed 's|\./||g' | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[edit-files] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[edit-files] -m | \
+  __fzf::widget::insert -q
 
-__fzf::widget::insert
+__fzf::widget::exec

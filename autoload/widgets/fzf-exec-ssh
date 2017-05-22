@@ -1,12 +1,13 @@
 #!/bin/zsh
 
-__fzf::widget::init 'ssh --'
+__fzf::widget::init 'ssh --' || return 1
 
 cat ~/.ssh/config /etc/ssh/ssh_config 2>/dev/null | \
   grep -i '^host' | \
   grep -v '*' | \
   awk '{if (length($2) > 0) {print $2}}' | \
   sort -u | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[exec-ssh] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[exec-ssh] +m | \
+  __fzf::widget::insert
 
-__fzf::widget::insert
+__fzf::widget::exec

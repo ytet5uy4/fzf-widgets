@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-__fzf::widget::init 'kill'
+__fzf::widget::init 'kill' || return 1
 
 ps -u $USER -o pid,stat,cputime,command | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[kill-process] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[kill-process] -m | \
+  awk '{print $1}' | \
+  __fzf::widget::insert
 
-__fzf::widget::filter "awk '{print \$1}'"
-
-__fzf::widget::insert
+__fzf::widget::exec

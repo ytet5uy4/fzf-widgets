@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-__fzf::widget::init 'docker container kill'
+__fzf::widget::init 'docker container kill' || return 1
 
 docker container ls | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[docker-kill-containers] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-kill-containers] -m | \
+  awk '{print $1}' | \
+  __fzf::widget::insert
 
-__fzf::widget::filter "awk '{print \$1}'"
-
-__fzf::widget::insert
+__fzf::widget::exec

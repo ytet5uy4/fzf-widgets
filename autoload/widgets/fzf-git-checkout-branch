@@ -1,20 +1,17 @@
 #!/bin/zsh
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  if [[ -n $TMUX ]]; then
-    local msg='fzf-git-checkout-branch: Not a git repository'
-    tmux split-window "less <<< \"$msg\""
-  fi
+  __fzf::widget::print 'fzf-git-checkout-branch: Not a git repository'
   return 1
 fi
 
-__fzf::widget::init 'git checkout'
+__fzf::widget::init 'git checkout' || return 1
 
 git branch --list -v | \
   grep -v '^\*' | \
   sed 's/^  *//' | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[git-checkout-branch] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[git-checkout-branch] +m | \
+  awk '{print $1}' | \
+  __fzf::widget::insert
 
-__fzf::widget::filter "awk '{print \$1}'"
-
-__fzf::widget::insert
+__fzf::widget::exec

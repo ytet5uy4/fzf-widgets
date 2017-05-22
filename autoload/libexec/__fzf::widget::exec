@@ -1,4 +1,13 @@
 #!/bin/zsh
 
-IFS=$'\n' local cmd="`cat $FZF_WIDGET_CACHE`"
-[[ -n $cmd ]] && $=cmd
+if [[ $1 = -q ]]; then
+  # execute a command quietly
+  IFS=$'\n' local cmd="`cat`"
+  if [[ -n $cmd ]]; then
+    $=cmd
+  else
+    __fzf::widget::clear
+  fi
+elif [[ -n $BUFFER ]]; then
+  zle accept-line
+fi

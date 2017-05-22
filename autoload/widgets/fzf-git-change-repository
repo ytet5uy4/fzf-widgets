@@ -2,11 +2,12 @@
 
 __fzf::widget::check 'ghq' || return 1
 
-__fzf::widget::init 'cd --'
+__fzf::widget::init 'cd --' || return 1
 
 ghq list -p | \
   sort | \
   sed "s|$HOME|~|g" | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[change-repository] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[change-repository] +m | \
+  __fzf::widget::insert -q
 
-__fzf::widget::insert
+__fzf::widget::exec

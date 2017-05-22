@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+POSTDISPLAY=$'\n'"$1"

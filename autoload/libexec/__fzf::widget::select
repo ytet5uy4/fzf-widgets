@@ -1,21 +1,14 @@
 #!/bin/zsh
 
-local selector='fzf'
+local -A selector
+selector[cmd]='fzf'
 
 if type tmux fzf-tmux >/dev/null 2>&1 && [[ $FZF_WIDGET_TMUX != 0 ]]; then
-  selector='fzf-tmux'
+  selector[cmd]='fzf-tmux'
 fi
 
-cat | $selector $@ >! $FZF_WIDGET_CACHE
+cat | $selector[cmd] $@
 
-if [[ $? = 130 ]]; then
-  __fzf::widget::clear
-  return 1
-elif [[ -z `cat $FZF_WIDGET_CACHE` ]]; then
-  if [[ -n $TMUX ]]; then
-    local msg="$0: there's no match"
-    tmux split-window "less <<< \"$msg\""
-  fi
-  __fzf::widget::clear
-  return 1
-fi
+selector[status]=$?
+echo "$selector[status]" >! $FZF_WIDGET_CACHE/status
+[[ $selector[status] = 0 ]] && return 0 || return 1

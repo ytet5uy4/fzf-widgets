@@ -1,9 +1,6 @@
 #!/bin/zsh
 
 if ! type $1 >/dev/null 2>&1; then
-  if [[ -n $TMUX ]]; then
-    local msg="$0: command not found: $1"
-    tmux split-window "less <<< \"$msg\""
-  fi
+  __fzf::widget::print "$0: command not found: $1"
   return 1
 fi

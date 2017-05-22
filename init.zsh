@@ -2,15 +2,12 @@ export FZF_WIDGET_ROOT="$0:a:h"
 export FZF_WIDGET_TMUX=0
 typeset -gA FZF_WIDGET_OPTS
 
+if [[ -z $FZF_WIDGET_CACHE ]]; then
+  export FZF_WIDGET_CACHE="${XDG_CACHE_HOME:-~/.cache}/fzf-widgets"
+fi
+
 : "Create cache directory" && () {
-  if [[ -n $XDG_CACHE_HOME ]]; then
-    [[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
-    local dir="$XDG_CACHE_HOME/fzf-widgets"
-  else
-    local dir="/tmp/fzf-widgets-$USER"
-  fi
-  [[ ! -d $dir ]] && mkdir $dir && chmod 700 $dir
-  export FZF_WIDGET_CACHE="$dir/data.txt"
+  [[ ! -d $FZF_WIDGET_CACHE ]] && mkdir -p $FZF_WIDGET_CACHE
 }
 
 : "Autoload functions and Create widgets" && () {

@@ -2,4 +2,4 @@
 
 BUFFER=""
 CURSOR=$#BUFFER
-zle reset-prompt
+zle redisplay

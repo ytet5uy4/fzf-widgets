@@ -2,10 +2,11 @@
 
 __fzf::widget::check 'cdr' || return 1
 
-__fzf::widget::init 'cd --'
+__fzf::widget::init 'cd --' || return 1
 
 cdr -l | \
   sed 's/^[^ ][^ ]*  *//' | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[change-recent-dir] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[change-recent-dir] +m | \
+  __fzf::widget::insert -q
 
-__fzf::widget::insert
+__fzf::widget::exec

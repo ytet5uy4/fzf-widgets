@@ -1,13 +1,11 @@
 #!/bin/zsh
 
-__fzf::widget::init
+__fzf::widget::init || return 1
 
-fc -l 1 | __fzf::widget::select --tac --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_WIDGET_OPTS[insert-history] --query="$LBUFFER" +m
+fc -l 1 | \
+  __fzf::widget::select --tac --tiebreak=index \
+  --bind=ctrl-r:toggle-sort $FZF_WIDGET_OPTS[insert-history] --query="$LBUFFER" +m | \
+  sed 's/ *[0-9]*  //g' | \
+  __fzf::widget::insert
 
-items=(`cat $FZF_WIDGET_CACHE`)
-if [[ -n $items ]]; then
-  num=$items[1]
-  if [ -n "$num" ]; then
-    zle vi-fetch-history -n $num
-  fi
-fi
+__fzf::widget::exec

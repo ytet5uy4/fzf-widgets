@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-__fzf::widget::init 'docker volume rm'
+__fzf::widget::init 'docker volume rm' || return 1
 
 docker volume ls | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-volumes] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-remove-volumes] -m | \
+  awk '{print $2}' | \
+  __fzf::widget::insert
 
-__fzf::widget::filter "awk '{print \$2}'"
-
-__fzf::widget::insert
+__fzf::widget::exec

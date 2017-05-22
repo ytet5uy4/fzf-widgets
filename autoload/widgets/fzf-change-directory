@@ -1,9 +1,10 @@
 #!/bin/zsh
 
-__fzf::widget::init 'cd --'
+__fzf::widget::init 'cd --' || return 1
 
 find . -mindepth 1 -type d -o -type l | \
   sed 's|\./||g' | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[change-dir] +m
+  __fzf::widget::select $FZF_WIDGET_OPTS[change-dir] +m | \
+  __fzf::widget::insert -q
 
-__fzf::widget::insert
+__fzf::widget::exec

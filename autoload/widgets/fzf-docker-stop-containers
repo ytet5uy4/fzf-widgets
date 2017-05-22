@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-__fzf::widget::init 'docker container stop'
+__fzf::widget::init 'docker container stop' || return 1
 
 docker container ls | \
   sed 1d | \
-  __fzf::widget::select $FZF_WIDGET_OPTS[docker-stop-containers] -m
+  __fzf::widget::select $FZF_WIDGET_OPTS[docker-stop-containers] -m | \
+  awk '{print $1}' | \
+  __fzf::widget::insert
 
-__fzf::widget::filter "awk '{print \$1}'"
-
-__fzf::widget::insert
+__fzf::widget::exec
