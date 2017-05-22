@@ -3,9 +3,7 @@
 local -A selector
 selector[cmd]='fzf'
 
-if type tmux fzf-tmux >/dev/null 2>&1 && [[ $FZF_WIDGET_TMUX != 0 ]]; then
-  selector[cmd]='fzf-tmux'
-fi
+[[ $FZF_WIDGET_TMUX != 0 ]] && selector[cmd]='fzf-tmux'
 
 cat | $selector[cmd] $@
 

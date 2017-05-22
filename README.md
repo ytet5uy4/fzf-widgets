@@ -77,21 +77,6 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
 fi
 ```
 
-To use `fzf-change-recent-directory`, add the following to your `.zshrc`:
-
-```
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-```
-
-To use `fzf-git-change-repository`, install [ghq][ghq-link].
-
-To use `fzf-edit-dotfiles`, add the following to your `.zshenv`:
-
-```
-export $DOT_BASE_DIR=/path/to/dir/dotfiles
-```
-
 ## License
 
 Copyright (c) 2017 ytet5uy4

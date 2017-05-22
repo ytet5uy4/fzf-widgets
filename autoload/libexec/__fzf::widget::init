@@ -2,6 +2,11 @@
 
 __fzf::widget::check 'fzf' || return 1
 
+if [[ $FZF_WIDGET_TMUX != 0 ]]; then
+  __fzf::widget::check 'tmux' || return 1
+  __fzf::widget::check 'fzf-tmux' || return 1
+fi
+
 if [[ -n $1 ]]; then
   BUFFER="$1 "
   CURSOR=$#BUFFER

@@ -1,6 +1,16 @@
 #!/bin/zsh
 
-__fzf::widget::check 'cdr' || return 1
+if ! __fzf::widget::check 'cdr'; then
+  local msg='fzf-change-recent-directory: commnad not found: cdr
+
+  Add the following to your `.zshrc`:
+
+    autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+    add-zsh-hook chpwd chpwd_recent_dirs
+  '
+  __fzf::widget::print "$msg"
+  return 1
+fi
 
 __fzf::widget::init 'cd --' || return 1
 
