@@ -18,6 +18,7 @@ This repository manage ZLE widgets of fzf.
 ### Pros
 
 * Can map widgets to whatever key you like
+* Show error messages with $POSTDISPLAY
 * Support for [zsh-autosuggestions][zsh-autosuggetions-link]
 * Support for [Antigen][antigen-link] ([junegunn/fzf#86][fzf-issue-86-link])
 
