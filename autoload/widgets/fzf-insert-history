@@ -7,5 +7,3 @@ fc -l 1 | \
   --bind=ctrl-r:toggle-sort $FZF_WIDGET_OPTS[insert-history] --query="$LBUFFER" +m | \
   sed 's/ *[0-9]*  //g' | \
   __fzf::widget::insert
-
-__fzf::widget::exec
