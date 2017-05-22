@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+__fzf::widget::init || return 1
+
+find -L . -type d -print -o -type l -print -o \
+  \( -path '*/\.*' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \) -prune \
+  2> /dev/null | \
+  grep -v '^.$' | \
+  sed 's|\./||g' | \
+  __fzf::widget::select $FZF_WIDGET_OPTS[insert-directory] +m | \
+  __fzf::widget::insert -q
