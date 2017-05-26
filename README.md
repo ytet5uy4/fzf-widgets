@@ -20,9 +20,9 @@ Available widgets can check [here][widgets-link].
 ### Pros
 
 * Can map widgets to whatever key you like
+* Can easily install with plugin manager
+* Can use with [zsh-autosuggestions][zsh-autosuggestions-link]
 * Show error messages with `$POSTDISPLAY`
-* Support for [zsh-autosuggestions][zsh-autosuggetions-link]
-* Support for plugin manager
 * All widgets are autoloaded function
 
 ## Installation
@@ -98,6 +98,6 @@ Released under the MIT License, see **[LICENSE.md][license-link]**.
 
 [release-link]: //github.com/ytet5uy4/fzf-widgets/releases/latest
 [license-link]: LICENSE.md
-[zsh-autosuggetions-link]: //github.com/zsh-users/zsh-autosuggestions
+[zsh-autosuggestions-link]: //github.com/zsh-users/zsh-autosuggestions
 [widgets-link]: //github.com/ytet5uy4/fzf-widgets/tree/master/autoload/widgets
 [ghq-link]: //github.com/motemen/ghq
