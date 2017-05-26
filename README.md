@@ -3,6 +3,7 @@
 [Overview](#overview) |
 [Installation](#installation) |
 [Requirements](#requirements) |
+[Usage](#usage) |
 [Configuration](#configuration) |
 [License](#license)
 
@@ -12,6 +13,7 @@
 ## Overview
 
 This repository manage ZLE widgets of fzf.
+Available widgets can check [here][widgets-link].
 
 ![screenshot]
 
@@ -20,11 +22,13 @@ This repository manage ZLE widgets of fzf.
 * Can map widgets to whatever key you like
 * Show error messages with `$POSTDISPLAY`
 * Support for [zsh-autosuggestions][zsh-autosuggetions-link]
-* Support for [Antigen][antigen-link] ([junegunn/fzf#86][fzf-issue-86-link])
+* Support for plugin manager
+* All widgets are autoloaded function
 
 ## Installation
 
-You can use zplug to install fzf-widgets. Add the following to your `.zshrc`:
+You can install with plugin manager.
+If use zplug, add the following to your `.zshrc`:
 
 ```zsh
 zplug 'ytet5uy4/fzf-widgets'
@@ -34,10 +38,15 @@ zplug 'ytet5uy4/fzf-widgets'
 
 `zsh`: version 5.0.2 or higher
 
+## Usage
+
+1. Map widgets to key with `bindkey` command
+1. Execute widget with mapped key
+
 ## Configuration
 
-You can map widgets to whatever key you like and specify options of `fzf` to
-each widgets with `$FZF_WIDGET_OPTS`. Add the following to your `.zshrc`:
+You can map widgets to key and specify options of `fzf` to widgets.
+For example, add the following to your `.zshrc`:
 
 ```zsh
 if zplug check 'ytet5uy4/fzf-widgets'; then
@@ -89,9 +98,6 @@ Released under the MIT License, see **[LICENSE.md][license-link]**.
 
 [release-link]: //github.com/ytet5uy4/fzf-widgets/releases/latest
 [license-link]: LICENSE.md
-
 [zsh-autosuggetions-link]: //github.com/zsh-users/zsh-autosuggestions
-[antigen-link]: //github.com/zsh-users/antigen
-[fzf-issue-86-link]: //github.com/junegunn/fzf/issues/86
-
+[widgets-link]: //github.com/ytet5uy4/fzf-widgets/tree/master/autoload/widgets
 [ghq-link]: //github.com/motemen/ghq
