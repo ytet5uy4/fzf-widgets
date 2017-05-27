@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+if ! __fzf::widget::check 'ghi'; then
+  local msg='fzf-github-open-issue: commnad not found: ghi
+
+  Please install ghi (https://github.com/stephencelis/ghi).
+  '
+  __fzf::widget::print "$msg"
+  return 1
+fi
+
+__fzf::widget::init 'ghi open' || return 1
+
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  (
+    ghi list -s closed | sed '1d'
+  ) | __fzf::widget::select $FZF_WIDGET_OPTS[github-open-issue] +m | \
+    awk '{print $1}' | \
+    __fzf::widget::insert -q
+else
+  (
+    ghi list -g -s closed | sed '1d'
+  ) | __fzf::widget::select $FZF_WIDGET_OPTS[github-open-issue] +m | \
+    awk '{print $2 " -- " $1}' | \
+    __fzf::widget::insert
+fi
+
+__fzf::widget::exec

@@ -68,6 +68,13 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@gc' fzf-git-checkout-branch
   bindkey '^@gd' fzf-git-delete-branches
 
+  # GitHub
+  bindkey '^@ghi'  fzf-github-show-issue
+  bindkey '^@ghe'  fzf-github-edit-issue
+  bindkey '^@gho'  fzf-github-open-issue
+  bindkey '^@ghc'  fzf-github-close-issue
+  bindkey '^@ghco' fzf-github-comment-issue
+
   ## Docker
   bindkey '^@d'   fzf-select-docker-widget
   bindkey '^@dk'  fzf-docker-kill-containers
