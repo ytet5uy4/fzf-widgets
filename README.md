@@ -63,12 +63,14 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^xd' fzf-insert-directory
 
   ## Git
-  bindkey '^@g'  fzf-git-change-repository
-  bindkey '^@ga' fzf-git-add-files
-  bindkey '^@gc' fzf-git-checkout-branch
-  bindkey '^@gd' fzf-git-delete-branches
+  bindkey '^@g'   fzf-select-git-widget
+  bindkey '^@ga'  fzf-git-add-files
+  bindkey '^@gc'  fzf-git-change-repository
+  bindkey '^@gco' fzf-git-checkout-branch
+  bindkey '^@gd'  fzf-git-delete-branches
 
   # GitHub
+  bindkey '^@gh'   fzf-select-github-widget
   bindkey '^@ghi'  fzf-github-show-issue
   bindkey '^@ghe'  fzf-github-edit-issue
   bindkey '^@gho'  fzf-github-open-issue
