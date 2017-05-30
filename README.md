@@ -63,29 +63,20 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^xd' fzf-insert-directory
 
   ## Git
-  bindkey '^@g'   fzf-select-git-widget
-  bindkey '^@ga'  fzf-git-add-files
-  bindkey '^@gc'  fzf-git-change-repository
-  bindkey '^@gco' fzf-git-checkout-branch
-  bindkey '^@gd'  fzf-git-delete-branches
+  bindkey '^@g'  fzf-select-git-widget
+  bindkey '^@ga' fzf-git-add-files
+  bindkey '^@gc' fzf-git-change-repository
 
   # GitHub
-  bindkey '^@gh'   fzf-select-github-widget
-  bindkey '^@ghi'  fzf-github-show-issue
-  bindkey '^@ghe'  fzf-github-edit-issue
-  bindkey '^@gho'  fzf-github-open-issue
-  bindkey '^@ghc'  fzf-github-close-issue
-  bindkey '^@ghco' fzf-github-comment-issue
+  bindkey '^@h'  fzf-select-github-widget
+  bindkey '^@hs' fzf-github-show-issue
+  bindkey '^@hc' fzf-github-close-issue
 
   ## Docker
-  bindkey '^@d'   fzf-select-docker-widget
-  bindkey '^@dk'  fzf-docker-kill-containers
-  bindkey '^@dl'  fzf-docker-logs-container
-  bindkey '^@dr'  fzf-docker-remove-containers
-  bindkey '^@dri' fzf-docker-remove-images
-  bindkey '^@drv' fzf-docker-remove-volumes
-  bindkey '^@dsa' fzf-docker-start-containers
-  bindkey '^@dso' fzf-docker-stop-containers
+  bindkey '^@d'  fzf-select-docker-widget
+  bindkey '^@dc' fzf-docker-remove-containers
+  bindkey '^@di' fzf-docker-remove-images
+  bindkey '^@dv' fzf-docker-remove-volumes
 
   # Enable Exact-match by fzf-insert-history
   FZF_WIDGET_OPTS[insert-history]='--exact'
