@@ -3,7 +3,7 @@ export FZF_WIDGET_TMUX=0
 typeset -gA FZF_WIDGET_OPTS
 
 if [[ -z $FZF_WIDGET_CACHE ]]; then
-  export FZF_WIDGET_CACHE="${XDG_CACHE_HOME:-~/.cache}/fzf-widgets"
+  export FZF_WIDGET_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/fzf-widgets"
 fi
 
 : "Create cache directory" && () {
