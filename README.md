@@ -62,6 +62,7 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^r'  fzf-insert-history
   bindkey '^xf' fzf-insert-files
   bindkey '^xd' fzf-insert-directory
+  bindkey '^xn' fzf-insert-named-directory
 
   ## Git
   bindkey '^@g'  fzf-select-git-widget
