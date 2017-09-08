@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+__fzf::widget::init || return 1
+
 hash -d | sed "s/\([^=]*\)/\x1b[34;1m\1\x1b[0m/" | \
   __fzf::widget::select $FZF_WIDGET_OPTS[insert-named-directory] +m --ansi | \
   cut -d'=' -f2 | \
