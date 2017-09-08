@@ -54,6 +54,7 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   bindkey '^@'  fzf-select-widget
   bindkey '^@.' fzf-edit-dotfiles
   bindkey '^@c' fzf-change-directory
+  bindkey '^@n' fzf-change-named-directory
   bindkey '^@f' fzf-edit-files
   bindkey '^@k' fzf-kill-processes
   bindkey '^@s' fzf-exec-ssh
