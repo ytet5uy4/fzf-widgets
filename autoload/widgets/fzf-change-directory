@@ -2,7 +2,7 @@
 
 __fzf::widget::init 'cd --' || return 1
 
-find . -mindepth 1 -type d -o -type l | \
+find . -mindepth 1 -type d -o -type l 2>/dev/null | \
   sed 's|\./||g' | \
   __fzf::widget::select $FZF_WIDGET_OPTS[change-dir] +m | \
   __fzf::widget::insert -q
