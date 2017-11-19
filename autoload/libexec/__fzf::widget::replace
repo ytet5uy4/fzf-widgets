@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+local -a items
+IFS=$'\n' items=(`cat`)
+
+if [[ -n $items ]]; then
+  BUFFER=''
+  CURSOR=$#BUFFER
+  zle redisplay
+  for item in $items; do
+    if [[ $1 = -q ]]; then
+      # quote special characters with backslashes
+      BUFFER+="$item:q:gs/\\~/~/ "
+    else
+      BUFFER+="$item "
+    fi
+  done
+  CURSOR=$#BUFFER
+  zle redisplay
+else
+  __fzf::widget::clear
+  if [[ `cat $FZF_WIDGET_CACHE/status` = 1 ]]; then
+    __fzf::widget::print "$0: there's no match"
+  fi
+  return 1
+fi
