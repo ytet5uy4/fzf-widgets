@@ -12,6 +12,7 @@ if [[ -n $items ]]; then
       BUFFER+="$item "
     fi
   done
+  BUFFER="${BUFFER% }"
   CURSOR=$#BUFFER
   zle redisplay
 else
