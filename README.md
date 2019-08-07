@@ -87,9 +87,9 @@ if zplug check 'ytet5uy4/fzf-widgets'; then
   FZF_WIDGET_TMUX=1
 
   # use fd for finding directories and files
-  FZF_CHANGE_DIR_COMMAND="fd -t d"
-  FZF_INSERT_DIR_COMMAND="fd -t d"
-  FZF_INSERT_FILES_COMMAND="fd -t f"
+  FZF_CHANGE_DIR_FIND_COMMAND="fd -t d"
+  FZF_INSERT_DIR_FIND_COMMAND="fd -t d"
+  FZF_INSERT_FILE_COMMAND="fd -t f"
   FZF_EDIT_FILES_COMMAND="fd -t f"
 
   # modify history command to remove duplicates
