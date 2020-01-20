@@ -7,6 +7,7 @@ if [[ -n $items ]]; then
   BUFFER=''
   CURSOR=$#BUFFER
   zle redisplay
+  local item
   for item in $items; do
     if [[ $1 = -q ]]; then
       # quote special characters with backslashes

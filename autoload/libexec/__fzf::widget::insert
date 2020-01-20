@@ -4,6 +4,7 @@ local -a items
 IFS=$'\n' items=(`cat`)
 
 if [[ -n $items ]]; then
+  local item
   for item in $items; do
     if [[ $1 = -q ]]; then
       # quote special characters with backslashes
